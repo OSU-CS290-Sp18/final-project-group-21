@@ -1,0 +1,25 @@
+/* Main style sheet for the website 
+to be implemented accross all pages 
+*/
+
+
+#NavBar {
+    display: inline;
+}
+
+
+#MainContainer {
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+#SearchHeader {
+    
+}
+
+
+#SearchContainer {
+    border-style: solid;
+    border-color: black;
+}
