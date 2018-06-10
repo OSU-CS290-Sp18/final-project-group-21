@@ -1,5 +1,8 @@
+
 var req = require("sync-request");
 var util = require("util");
+
+// Takes in the API object, converts it to a cleaner object
 function clean_up(api_object){
 	console.log(api_object);
 	var obj = new Object();
@@ -16,6 +19,10 @@ function clean_up(api_object){
 }
 
 
+
+// Makes a synchronous request to google API to query the distance from 
+// Location to places (places can be an array of addresses) 
+// And returns the cleaned up object
 module.exports = function(locationn, places){
 	if(locationn==undefined || places==undefined || places.length==0){
 
