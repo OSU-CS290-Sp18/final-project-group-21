@@ -8,10 +8,11 @@ function clean_up(api_object){
 		obj.addresses.push({
 				address: api_object.destination_addresses[x], 
 				distance:api_object.rows[0].elements[x].distance.text,
-				duration:api_object.rows[0].elements[x].duration.text
+				duration:api_object.rows[0].elements[x].duration.text,
+				items		:{}
 		});
 	}
-	return JSON.stringify(obj);
+	return obj;
 }
 
 
@@ -19,7 +20,7 @@ module.exports = function(locationn, places){
 	if(locationn==undefined || places==undefined || places.length==0){
 
 		console.log(places.toString());
-		return "Erorr: bad input ";
+		return "Erorr: bad input to functions.js " + places + "a f";
 	} else {
 			console.log("In getHttp()\nlocation = "+locationn.toString()+"\nplaces = "+util.inspect(places[0].place, false, null)); 
 	}
@@ -36,7 +37,7 @@ module.exports = function(locationn, places){
 	console.log(" == params = " + params);
 	var res = req("GET", "https://maps.googleapis.com/maps/api/distancematrix/json?" + params);
 	var api_object = JSON.parse(res.body.toString());
-	return clean_up(api_object).toString();
+	return clean_up(api_object);
 
 }
 /*

@@ -1,9 +1,14 @@
 var mongo = require("mongodb").MongoClient;
 var db = null;
+var dbname = "test"
+var dbuserpass = ""
+var dbhost = "localhost"
+var dbport = "27017"
+
 module.exports = function(){
 	console.log("here");
 	//var url = "mongodb://coletyl:932687587@classmongo.engr.oregonstate.edu/932687587";
-	var url = "mongodb://cs290_coletyl:cs290_coletyl@classmongo.engr.oregonstate.edu:27017/cs290_coletyl"
+	var url = "mongodb://"+dbhost+":"+dbport+"/"+dbname;
 	if(db){
 		console.log("is defined");
 		return db;
@@ -14,7 +19,7 @@ module.exports = function(){
 					console.log("There was an error while connceting : " + error );
 				} else {
 					console.log("Connection to mongo database successful");
-					db = client.db("cs290_coletyl");
+					db = client.db(dbname);
 					return db;
 				}
 			});
