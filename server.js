@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars');
 
 
 
-
+app.use("/", express.static("public/"));
 
 app.get('/api/:cost/:originn', function(req,res){
 	console.log("req params " + JSON.stringify(req.params)); 

@@ -1,5 +1,69 @@
 /* Main style sheet for the website 
 to be implemented accross all pages 
 */
+body, header {
+	margin:0px; padding:0px; 
+}
+
+.inputbox {
+	padding:10px; 
+}
+
+.inputtable td {
+	padding-left:20px;
+}
+
+.homebox {
+	margin:0px;
+	width:100%;
+}
+
+.headerbox{
+	font-size:32px;
+	padding:10px;
+	background-color:#DCDCDC;
+	border:8px; solid #F0F0F0;
+}
+
+
+.itembox {
+	background-color:gray;
+	width:100%;
+	border:2px solid black;
+}
+.innerbox {
+	margin:20px;
+}	
+.menubox {
+	justify-content:space-between;
+	display:flex;
+	flex: 1,1, 200px;
+	flex-direction:row
+}
+
+.menuitem {
+	padding:10px;
+}
+
+.menuitemitem {
+
+}
+
+.menuitemcost {
+}
+
+.address-title {
+	text-align:center;
+	font-weight:bold;
+	font-size:18px;
+	text-decoration:underline;
+
+}
+
+.address-subtitle {
+	text-align:center;
+	text-decoration:center;
+	font-weight:bold;
+}
 
 
