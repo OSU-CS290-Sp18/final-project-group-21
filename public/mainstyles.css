@@ -67,3 +67,26 @@ body, header {
 }
 
 
+/* Input Styles */
+#address {
+    border-style: solid;
+}
+
+
+#Location {
+    border-style: solid;
+}
+
+
+#MileRange {
+    border-style: solid;
+}
+
+#PriceRadio {
+    border-style: solid;
+    display: inline;
+}
+
+
+
+
