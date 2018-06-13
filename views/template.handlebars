@@ -1,10 +1,10 @@
 {{#each addresses}}
 <div class="itembox">
 <div class="innerbox">
-<div class="address-title">Location = {{address}}</div> <div class="address-subtitle">{{distance}} away, about {{duration}}</div>
+<div class="address-title">{{name}}</div> <div class="address-subtitle">{{distance}} away, about {{duration}}</div>
 <div class = "menubox">
 {{#each items}}
-	<div class="menuitem"> <span class="menuitemitem">{{@key}} = </span> <span class="menuitemcost">{{this}}</span>  </div>
+	<div class="menuitem"> <span class="menuitemitem">{{@key}}  </span> $<span class="menuitemcost">{{this}}</span>  </div>
 {{/each}}
 </div>
 </div>
