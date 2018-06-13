@@ -5,8 +5,8 @@ var util = require("util");
 // Takes in the API object, converts it to a cleaner object
 function clean_up(api_object){
 	console.log(api_object);
-	if(api_object){
-	console.log(api_object);
+	if(api_object && api_object.origin_addresses[0]!='' ){
+	console.log(api_object.origin_addresses.length);
 	var obj = new Object();
 	obj.addresses= [];
 	for(var x =0; x<api_object.destination_addresses.length; x++){
@@ -20,7 +20,7 @@ function clean_up(api_object){
 	}
 	return obj;
 	} else {
-		return null;
+		return {error : "invalid address" };
 	}
 }
 

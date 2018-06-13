@@ -45,6 +45,7 @@ function addData(apiResponse){
 	console.log("val = " + val);
 	console.log(apiResponse);
 	apiResponse = JSON.parse(apiResponse);
+	if(apiResponse.addresses!=undefined){
 	for(var x=0; x<apiResponse.addresses.length; x++){
  		var miles = apiResponse.addresses[x].distance.substr(0, apiResponse.addresses[x].distance.indexOf(" "));
 		console.log("miles = " + miles);
@@ -65,6 +66,7 @@ function addData(apiResponse){
 	var html = Handlebars.templates.template(apiResponse);
 	var body = document.querySelector("#ContainerOfMenus");
 	body.insertAdjacentHTML('afterbegin', html);
+	}
 }
 
 

@@ -21,7 +21,7 @@ app.use("/", express.static("public/"));
 // Takes in the maximum cost to spend, and the original location
 // Returns a JSON object with an array containing all distances away from
 // The users current location, as well as items under his maximum price
-app.get('/api/:cost/:originn', function(req,res){
+app.use('/api/:cost/:originn', function(req,res){
 	console.log("req params " + JSON.stringify(req.params)); 
 	var originn = req.params.originn;
 	var cost = req.params.cost;
@@ -35,6 +35,11 @@ app.get('/api/:cost/:originn', function(req,res){
 		} else {
 			// Makes a synchronous request to the google api (in getHttp)
 				var resp = getHttp(originn, placess);
+				if(resp['addresses']==undefined){
+					res.write(JSON.stringify(resp));
+					res.status(200).send();
+					console.log(" lol ");
+				} else { 
 				console.log("resp.addresses = " + resp.addresses);// + " and " + resp.addresses.length)
 				for(var x = 0; x<resp.addresses.length; x++){
 						resp.addresses[x].name = placess[x].name;
@@ -56,17 +61,20 @@ app.get('/api/:cost/:originn', function(req,res){
 							}
 						} // Should clean this up 
 				}
+				
 				res.write(JSON.stringify(resp).toString());
 				res.status(200).send();
-		}
+				}
+			}
 	});
 	
 });
 
-app.use("/", function(req, res){
+app.get("/", function(req, res){
 	console.log("In home - " + db);
 	res.status(200).render("home");
 });
+
 
 
 app.listen(port, function(){
