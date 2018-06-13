@@ -24,15 +24,23 @@ function clearData(){
 }
 
 function addData(apiResponse){
-	// Inserts the api response into the home 
+	// Inserts the api response into the home
+	var val = document.querySelector("#slider:checked").value;
+	var doshow = true;
 	console.log(apiResponse);
 	apiResponse = JSON.parse(apiResponse);
 	for(var x=0; x<apiResponse.addresses.length; x++){
-		console.log(apiResponse.addresses[x])
-		console.log(Object.keys(apiResponse.addresses[x].items).length)
-		if(Object.keys(apiResponse.addresses[x].items).length==0){
-			apiResponse.addresses.splice(x,1)
-			x--;
+ 		var miles = apiResponse.addresses[x].distance.substr(0, apiResponse.addresses[x].distance.indexOf(" "));
+		
+		if(miles<=val){
+			apiResponse.splice(x, 1);
+		} else {
+			console.log(apiResponse.addresses[x])
+			console.log(Object.keys(apiResponse.addresses[x].items).length)
+			if(Object.keys(apiResponse.addresses[x].items).length==0){
+				apiResponse.addresses.splice(x,1)
+				x--;
+			}
 		}
 	}
 	var html = Handlebars.templates.template(apiResponse);
