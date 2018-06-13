@@ -41,15 +41,18 @@ function clearData(){
 
 function addData(apiResponse){
 	// Inserts the api response into the home
-	var val = document.querySelector("#RangeFrom:checked").value;
+	var val = parseFloat(document.querySelector("#RangeFrom:checked").value);
 	console.log("val = " + val);
 	console.log(apiResponse);
 	apiResponse = JSON.parse(apiResponse);
 	for(var x=0; x<apiResponse.addresses.length; x++){
  		var miles = apiResponse.addresses[x].distance.substr(0, apiResponse.addresses[x].distance.indexOf(" "));
 		console.log("miles = " + miles);
-		if(miles<=val){
+		miles = parseFloat(miles);
+		if(miles>val){
+			console.log("She gone, miles " + miles + " > " + " val " + val);
 			apiResponse.addresses.splice(x, 1);
+			x--;
 		} else {
 			console.log(apiResponse.addresses[x])
 			console.log(Object.keys(apiResponse.addresses[x].items).length)
