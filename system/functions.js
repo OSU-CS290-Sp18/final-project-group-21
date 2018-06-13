@@ -12,6 +12,7 @@ function clean_up(api_object){
 	for(var x =0; x<api_object.destination_addresses.length; x++){
 		obj.addresses.push({
 				address: api_object.destination_addresses[x], 
+				name: "", 
 				distance:api_object.rows[0].elements[x].distance.text,
 				duration:api_object.rows[0].elements[x].duration.text,
 				items		:{}

@@ -35,8 +35,9 @@ app.get('/api/:cost/:originn', function(req,res){
 		} else {
 			// Makes a synchronous request to the google api (in getHttp)
 				var resp = getHttp(originn, placess);
-				console.log("resp.addresses = " + resp.addresses + " and " + resp.addresses.length)
+				console.log("resp.addresses = " + resp.addresses);// + " and " + resp.addresses.length)
 				for(var x = 0; x<resp.addresses.length; x++){
+						resp.addresses[x].name = placess[x].name;
 						for(var key in placess[x].menu){
 							console.log("var key = " + key);
 							// Check to see if the menu item is <= the maximum cost by the user
