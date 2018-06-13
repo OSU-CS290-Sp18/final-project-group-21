@@ -42,7 +42,7 @@ app.get('/api/:cost/:originn', function(req,res){
 						miles = miles.substr(0, miles.indexOf(" "));
 					  console.log("miles = " + miles);
 						miles = miles/1.60934;
-						miles = Math.round(miles* 1000) / 1000;
+						miles = Math.round(miles* 10) / 10;
 					  console.log("miles = " + miles);
 					  miles = miles + " miles";
 						resp.addresses[x].distance = miles;
