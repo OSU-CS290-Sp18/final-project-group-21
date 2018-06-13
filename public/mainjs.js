@@ -1,19 +1,35 @@
 /* Main clientside Javascript file */
 
-function add(){
-var sub = document.getElementById("subbb");
-sub.addEventListener("click", function(event){
+function onchng() {
+	console.log("in onchng");
 	var address = document.getElementById("address");
 	var slider =	document.querySelector("#slider:checked");
 	if(slider.value && address.value){
 		getAPI(slider.value, encodeURI(address.value));
-		slider.value="";
-		address.value="";
 	} else {
 		alert("Invalid address");
 	}
-});	
 }
+
+function add(){
+	var sub = document.getElementById("subbb");
+	sub.addEventListener("click", onchng);
+
+	var radios = document.querySelectorAll("#RangeFrom");
+	for(var x =0; x<radios.length; x++){
+		radios[x].addEventListener("change", onchng);
+	}
+	var radios = document.querySelectorAll("#slider");
+
+	for(var x =0; x<radios.length; x++){
+		radios[x].addEventListener("change", onchng);
+	}
+
+//	var addr = document.querySelector("#address");
+//	addr.addEventListener("input" , onchng);
+
+}
+
 
 function clearData(){
 	// clears the home screen of cards 
@@ -33,7 +49,7 @@ function addData(apiResponse){
  		var miles = apiResponse.addresses[x].distance.substr(0, apiResponse.addresses[x].distance.indexOf(" "));
 		console.log("miles = " + miles);
 		if(miles<=val){
-			apiResponse.splice(x, 1);
+			apiResponse.addresses.splice(x, 1);
 		} else {
 			console.log(apiResponse.addresses[x])
 			console.log(Object.keys(apiResponse.addresses[x].items).length)
