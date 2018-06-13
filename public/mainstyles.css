@@ -25,6 +25,7 @@ body, header {
     margin: 1%;
     float: right;
 	border:2px solid black;
+    text-align: center;
 }
 
 #ContainerOfMenus {
@@ -41,13 +42,20 @@ body, header {
 
 .menubox {
 	justify-content:space-between;
-	display:flex;
+	display: inline;
 	flex: 1,1, 200px;
 	flex-direction:row;
+    text-align: center;
 }
 
 .menuitem {
-	padding:10px;
+	padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    font-size: 120%;
+    background-color: white;
+    text-align: center;
 }
 
 .menuitemitem {
