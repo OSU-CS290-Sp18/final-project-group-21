@@ -20,9 +20,18 @@ body, header {
 
 
 .itembox {
-	background-color:gray;
+	background-color:gainsboro;
 	width:100%;
+    margin: 1%;
+    float: right;
 	border:2px solid black;
+}
+
+#ContainerOfMenus {
+    float: right;
+    width: 45%;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .innerbox {
@@ -33,7 +42,7 @@ body, header {
 	justify-content:space-between;
 	display:flex;
 	flex: 1,1, 200px;
-	flex-direction:row
+	flex-direction:row;
 }
 
 .menuitem {
@@ -116,6 +125,7 @@ div.inputbox {
 
 #InputForm {
     width: 45%;
+    float: left;
     background-color: gainsboro;
     margin: 1%;
     border-radius: 10px;

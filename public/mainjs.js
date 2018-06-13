@@ -36,8 +36,8 @@ function addData(apiResponse){
 		}
 	}
 	var html = Handlebars.templates.template(apiResponse);
-	var body = document.querySelector("body");
-	body.insertAdjacentHTML('beforeend', html);
+	var body = document.querySelector("#ContainerOfMenus");
+	body.insertAdjacentHTML('afterbegin', html);
 }
 
 
