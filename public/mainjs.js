@@ -10,7 +10,7 @@ sub.addEventListener("click", function(event){
 		slider.value="";
 		address.value="";
 	} else {
-		alert("Invalid slider or address values");
+		alert("Invalid address");
 	}
 });	
 }

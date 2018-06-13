@@ -3,11 +3,35 @@
 <div class="homebox">
 <div class="inputbox">
 	<fieldset>
-		<legend> Input </legend>
-		<table class="inputtable">
-		<tr><td>Address:       </td><td> <input type="text" id="address"></td></tr>
-		<tr><td>Max Cost:      </td><td> <input type="slider" id="slider"></td></tr>
-		<tr><td><input id="subbb" type="submit" value="submit"></td></tr>
+		<legend> Bite Finder </legend>
+
+        <form id="InputForm">  
+            <div id="AddressDiv">
+                <h1>Search From:</h1>
+                <input type="text" id="address" class="LocationInput">
+            </div>
+            <div id="RangeDiv">
+                <h1>Within</h1>
+                <div id="MilesRadioDiv">
+                    <input type="radio" name="MilesFrom" value="1" id="RangeFrom" checked>1 Mile
+                    <input type="radio" name="MilesFrom" value="3" id="RangeFrom">3 Miles
+                    <input type="radio" name="MilesFrom" value="5" id="RangeFrom">5 Miles
+                    <input type="radio" name="MilesFrom" value="10" id="RangeFrom">10 Miles
+                </div>
+            </div>
+            <div id="PriceRangeDiv">
+                <h1>Price Range</h1>
+                <div id="PriceRangeInputDiv">
+                    <input type="radio" name="PriceBox" value="5" id="slider" checked>Under $5 
+                    <input type="radio" name="PriceBox" value="10" id="slider">Under $10 
+                    <input type="radio" name="PriceBox" value="15" id="slider">Under $15 
+                    <input type="radio" name="PriceBox" value="20" id="slider">Under $20 
+                </div>
+            </div>
+            <div id="SearchDiv">
+                <input id="subbb" type="submit" value="Search">
+            </div>
+        </form>
 	</fieldset>
 </div> 
 
