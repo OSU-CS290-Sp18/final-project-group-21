@@ -21,7 +21,7 @@ body, header {
 
 .itembox {
 	background-color:gainsboro;
-	width:100%;
+	width:95%;
     margin: 1%;
     float: right;
 	border:2px solid black;
@@ -32,6 +32,7 @@ body, header {
     width: 45%;
     overflow: scroll;
     overflow-x: hidden;
+    height: 470px;
 }
 
 .innerbox {
