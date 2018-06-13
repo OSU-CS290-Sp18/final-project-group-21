@@ -25,13 +25,13 @@ function clearData(){
 
 function addData(apiResponse){
 	// Inserts the api response into the home
-	var val = document.querySelector("#slider:checked").value;
-	var doshow = true;
+	var val = document.querySelector("#RangeFrom:checked").value;
+	console.log("val = " + val);
 	console.log(apiResponse);
 	apiResponse = JSON.parse(apiResponse);
 	for(var x=0; x<apiResponse.addresses.length; x++){
  		var miles = apiResponse.addresses[x].distance.substr(0, apiResponse.addresses[x].distance.indexOf(" "));
-		
+		console.log("miles = " + miles);
 		if(miles<=val){
 			apiResponse.splice(x, 1);
 		} else {
