@@ -1,6 +1,6 @@
 var mongo = require("mongodb").MongoClient;
 var db = null;
-var dbname = "places"
+var dbname = "test"
 var dbuserpass = ""
 var dbhost = "localhost"
 var dbport = "27017"
