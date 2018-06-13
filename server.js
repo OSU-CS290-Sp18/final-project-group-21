@@ -38,6 +38,14 @@ app.get('/api/:cost/:originn', function(req,res){
 				console.log("resp.addresses = " + resp.addresses);// + " and " + resp.addresses.length)
 				for(var x = 0; x<resp.addresses.length; x++){
 						resp.addresses[x].name = placess[x].name;
+						var miles = resp.addresses[x].distance;
+						miles = miles.substr(0, miles.indexOf(" "));
+					  console.log("miles = " + miles);
+						miles = miles/1.60934;
+						miles = Math.round(miles* 1000) / 1000;
+					  console.log("miles = " + miles);
+					  miles = miles + " miles";
+						resp.addresses[x].distance = miles;
 						for(var key in placess[x].menu){
 							console.log("var key = " + key);
 							// Check to see if the menu item is <= the maximum cost by the user
