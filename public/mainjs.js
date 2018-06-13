@@ -4,7 +4,7 @@ function add(){
 var sub = document.getElementById("subbb");
 sub.addEventListener("click", function(event){
 	var address = document.getElementById("address");
-	var slider =	document.getElementById("slider");
+	var slider =	document.querySelector("#slider:checked");
 	if(slider.value && address.value){
 		getAPI(slider.value, encodeURI(address.value));
 		slider.value="";
